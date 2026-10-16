@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colegio Fénix — San Antonio</title>
+<meta name="description" content="Colegio Fénix de San Antonio: enseñanza básica y media. Formamos líderes con valores y excelencia para un futuro brillante.">
+<link rel="icon" href="img/escudo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1030; --bg2:#0f1840; --surf:#141f52; --surf2:#1a2766;
+  --gold:#f5c518; --gold2:#ffe066; --blue:#5b7cff; --pink:#ff7aa8;
+  --fg:#f3f5ff; --mute:#9aa4d6; --line:rgba(255,255,255,.1);
+  --gut:clamp(16px,4vw,52px);
+  --disp:"Bricolage Grotesque",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+body{background:var(--bg);color:var(--fg);font:400 16.5px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+.wrap{max-width:1300px;margin:0 auto;padding:0 var(--gut)}
+.hl{position:relative;color:var(--bg);z-index:0;white-space:nowrap;padding:0 .12em}
+.hl::before{content:"";position:absolute;inset:.08em -.02em .02em;background:var(--gold);border-radius:.18em;transform:rotate(-1.5deg);z-index:-1}
+.tag{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 Inter;color:var(--gold);letter-spacing:.02em}
+.tag::before{content:"✦";font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:999px;font:700 15px/1 var(--disp);transition:transform .25s,background .25s,box-shadow .25s;white-space:nowrap;border:0;cursor:pointer}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn-gold{background:var(--gold);color:var(--bg);box-shadow:0 0 0 0 rgba(245,197,24,.5)}
+.btn-gold:hover{box-shadow:0 12px 30px -10px rgba(245,197,24,.7)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--gold);color:var(--gold)}
+.ic{width:20px;height:20px;flex:none}
+
+/* nav */
+.nav{position:sticky;top:40px;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(10,16,48,.85);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:78px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:48px}
+.brand b{display:block;font:800 21px/1 var(--disp);letter-spacing:-.02em}
+.brand small{display:block;font:500 12px/1 Inter;color:var(--mute);margin-top:5px}
+.nav ul{display:flex;gap:4px;list-style:none;font-weight:500;font-size:14.5px}
+.nav ul a{padding:9px 13px;border-radius:999px;color:#cfd5f5;transition:background .2s,color .2s}
+.nav ul a:hover{background:var(--surf);color:#fff}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--surf);border:0;cursor:pointer;position:relative}
+.burger i,.burger i::before,.burger i::after{position:absolute;left:13px;width:20px;height:2px;border-radius:2px;background:#fff;content:"";transition:.3s}
+.burger i{top:22px}.burger i::before{left:0;top:-6px}.burger i::after{left:0;top:6px}
+.menu{position:fixed;inset:0;z-index:49;background:var(--gold);color:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:130px var(--gut) 40px;gap:0;opacity:0;pointer-events:none;transition:opacity .3s}
+.menu a{font:800 44px/1.15 var(--disp);letter-spacing:-.03em}
+body.open .menu{opacity:1;pointer-events:auto}
+body.open .nav{background:var(--gold);color:var(--bg)}
+body.open .brand small{color:var(--bg)}
+body.open .burger{background:var(--bg)}
+body.open .burger i{background:transparent}
+body.open .burger i::before{top:0;transform:rotate(45deg)}
+body.open .burger i::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;padding:clamp(40px,6vw,80px) 0 clamp(70px,8vw,110px);overflow:hidden}
+.hero::before{content:"";position:absolute;width:780px;height:780px;right:-220px;top:-260px;background:radial-gradient(circle,rgba(91,124,255,.35),transparent 65%);pointer-events:none}
+.hero .g{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative}
+.hero h1{font-size:clamp(54px,7.4vw,118px);margin:20px 0 26px}
+.hero p{font-size:clamp(17px,1.4vw,20px);color:#c9d0f2;max-width:520px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.badges span{padding:9px 14px;border-radius:999px;background:var(--surf);border:1px solid var(--line);font-weight:600;font-size:14px}
+.stack{position:relative;height:560px}
+.pol{position:absolute;background:#fff;padding:10px 10px 42px;border-radius:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transition:transform .5s var(--ease)}
+.pol img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.pol span{position:absolute;left:0;right:0;bottom:10px;text-align:center;color:#1b2453;font:700 15px var(--disp)}
+.pol.p1{width:56%;height:62%;left:2%;top:4%;transform:rotate(-7deg)}
+.pol.p2{width:52%;height:56%;right:0;top:0;transform:rotate(6deg)}
+.pol.p3{width:62%;height:52%;left:20%;bottom:0;transform:rotate(-2deg)}
+.stack:hover .p1{transform:rotate(-10deg) translate(-10px,-6px)}
+.stack:hover .p2{transform:rotate(9deg) translate(10px,-6px)}
+.sticker{position:absolute;right:4%;bottom:12%;width:120px;height:120px;border-radius:50%;background:var(--gold);color:var(--bg);display:grid;place-items:center;text-align:center;font:800 15px/1.1 var(--disp);transform:rotate(12deg);box-shadow:0 18px 40px -16px rgba(0,0,0,.6);z-index:3;animation:spin 16s linear infinite}
+.sticker img{width:58px}
+@keyframes spin{to{transform:rotate(372deg)}}
+
+/* marquee */
+.marqwrap{overflow:hidden;padding:12px 0}
+.marq{background:var(--gold);color:var(--bg);overflow:hidden;white-space:nowrap;padding:18px 0;transform:rotate(-1.2deg);margin:0 -20px}
+.marq div{display:inline-flex;gap:34px;animation:mq 30s linear infinite;font:800 30px/1 var(--disp);letter-spacing:-.02em;text-transform:uppercase}
+.marq span::after{content:"✦";margin-left:34px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:clamp(80px,10vw,140px) 0}
+.sh{margin-bottom:clamp(36px,5vw,60px);max-width:820px}
+.sh h2{font-size:clamp(42px,5.6vw,84px);margin-top:16px}
+.sh p{color:var(--mute);margin-top:18px;max-width:560px}
+
+/* lirmi */
+#lirmi{background:var(--gold);color:var(--bg)}
+#lirmi .tag{color:var(--bg)}
+#lirmi h2{font-size:clamp(48px,7vw,110px);margin-top:14px}
+.lirmi{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center}
+.lirmi p{font-size:18px;max-width:520px;margin-top:20px;color:#2a3260}
+.logins{display:grid;gap:12px;margin-top:30px}
+.login{display:flex;align-items:center;gap:18px;padding:20px 24px;border-radius:24px;background:var(--bg);color:#fff;transition:transform .3s var(--ease),background .3s}
+.login:hover{transform:translateX(8px)}
+.login.e{background:#fff;color:var(--bg)}
+.login .i{width:56px;height:56px;border-radius:18px;background:var(--gold);color:var(--bg);display:grid;place-items:center;flex:none}
+.login.e .i{background:var(--bg);color:var(--gold)}
+.login .i svg{width:26px;height:26px}
+.login b{display:block;font:800 26px/1.1 var(--disp);letter-spacing:-.02em}
+.login small{opacity:.65;font-size:14px}
+.login .ar{margin-left:auto;font:800 28px var(--disp)}
+.video{position:relative;aspect-ratio:16/9;border-radius:28px;overflow:hidden;background:#000;cursor:pointer}
+.video img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.video:hover img{transform:scale(1.05)}
+.video .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:var(--gold);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(245,197,24,.3)}
+.video .play svg{width:30px;height:30px;color:var(--bg);margin-left:4px}
+#lirmi .video{border:6px solid var(--bg);transform:rotate(2deg)}
+#lirmi .video .play{background:var(--bg);box-shadow:0 0 0 12px rgba(10,16,48,.25)}
+#lirmi .video .play svg{color:var(--gold)}
+.vlabel{margin-top:16px;font:700 16px var(--disp);display:flex;gap:10px;align-items:center}
+.vlabel span{background:var(--bg);color:var(--gold);padding:5px 11px;border-radius:999px;font-size:12px}
+
+/* nosotros */
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mvc{border-radius:30px;padding:clamp(26px,3.4vw,44px);background:var(--surf);border:1px solid var(--line);position:relative;overflow:hidden}
+.mvc h3{font-size:clamp(34px,3.4vw,48px);margin-bottom:16px}
+.mvc p{color:#c9d0f2;font-size:17px}
+.mvc .n{position:absolute;right:24px;top:18px;font:800 80px/1 var(--disp);color:rgba(255,255,255,.06)}
+.mvc.a{background:linear-gradient(140deg,var(--blue),#3346c9);border:0}
+.mvc.a p{color:rgba(255,255,255,.88)}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.pills span{display:flex;gap:10px;align-items:center;padding:14px 20px;border-radius:999px;background:var(--surf2);font:700 17px var(--disp)}
+
+/* sedes */
+.sedes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sede{position:relative;border-radius:30px;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;isolation:isolate}
+.sede>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s var(--ease)}
+.sede:hover>img{transform:scale(1.05)}
+.sede::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(10,16,48,.97) 0%,rgba(10,16,48,.55) 50%,rgba(10,16,48,.1) 100%)}
+.sede .b{padding:30px}
+.sede .lvl{display:inline-block;padding:7px 13px;border-radius:999px;background:var(--gold);color:var(--bg);font:700 13px var(--disp)}
+.sede h3{font-size:clamp(32px,3vw,44px);margin:14px 0 14px}
+.sede p{color:#d3d8f5;font-size:15.5px}
+.sede p a:hover{color:var(--gold)}
+.sede .btn{margin-top:18px;padding:12px 18px;font-size:14px}
+
+/* convivencia */
+.conv{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center}
+.conv h2{font-size:clamp(40px,4.8vw,70px);margin:16px 0 20px}
+.conv p{color:#c9d0f2}
+.conv blockquote{margin-top:24px;padding:22px 24px;border-radius:22px;background:var(--surf);border-left:4px solid var(--pink);font:700 21px/1.35 var(--disp)}
+
+/* galería horizontal */
+#galeria{padding-right:0}
+.gal{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) 18px max(var(--gut),calc((100vw - 1300px)/2 + var(--gut)));scrollbar-width:thin;scrollbar-color:var(--gold) transparent;cursor:grab}
+.gal:active{cursor:grabbing}
+.gal button{flex:0 0 auto;width:clamp(240px,26vw,340px);aspect-ratio:3/4;border:0;padding:0;border-radius:24px;overflow:hidden;position:relative;scroll-snap-align:start;cursor:zoom-in;background:var(--surf)}
+.gal button:nth-child(even){transform:translateY(30px)}
+.gal img{width:100%;height:100%;object-fit:cover;pointer-events:none;transition:transform .6s var(--ease)}
+.gal button:hover img{transform:scale(1.06)}
+.gal span{position:absolute;left:14px;bottom:14px;padding:7px 13px;border-radius:999px;background:var(--gold);color:var(--bg);font:700 13px var(--disp)}
+.gal-hint{margin-top:44px;color:var(--mute);font-size:14px}
+
+/* documentos */
+.docs{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,70px);align-items:start}
+.docs .side{position:sticky;top:150px}
+.docs h2{font-size:clamp(40px,4.8vw,70px);margin:16px 0 20px}
+.docs p{color:var(--mute)}
+.feat{display:flex;align-items:center;gap:16px;margin-top:28px;padding:22px;border-radius:24px;background:var(--gold);color:var(--bg);transition:transform .25s}
+.feat:hover{transform:rotate(-1deg) scale(1.02)}
+.feat .i{width:54px;height:54px;border-radius:16px;background:var(--bg);color:var(--gold);display:grid;place-items:center;flex:none}
+.feat b{display:block;font:800 22px/1.15 var(--disp)}
+.feat small{opacity:.7;font-weight:600}
+.search{display:flex;align-items:center;gap:10px;background:var(--surf);border:1.5px solid var(--line);border-radius:999px;padding:0 20px;margin-bottom:14px;transition:border-color .2s}
+.search:focus-within{border-color:var(--gold)}
+.search input{flex:1;border:0;outline:none;background:none;padding:16px 0;color:#fff}
+.search input::placeholder{color:#7d87bf}
+.search svg{color:var(--gold)}
+.doclist{list-style:none;display:grid;gap:8px}
+.doclist a{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:20px;background:var(--surf);border:1px solid var(--line);transition:background .2s,transform .2s,border-color .2s}
+.doclist a:hover{background:var(--surf2);border-color:rgba(245,197,24,.5);transform:translateX(6px)}
+.doclist .pdf{flex:none;width:42px;height:42px;border-radius:12px;background:rgba(255,122,168,.15);color:var(--pink);display:grid;place-items:center;font:800 11px var(--disp)}
+.doclist b{flex:1;font-weight:500;font-size:15.5px;line-height:1.35}
+.doclist .dl{color:var(--gold);flex:none}
+.empty{display:none;padding:22px;text-align:center;color:var(--mute)}
+
+/* contacto */
+#contacto{background:var(--bg2);border-top:1px solid var(--line)}
+.ct{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,60px)}
+.ct h2{font-size:clamp(44px,5.4vw,80px);margin:16px 0 26px}
+.ct .rows{display:grid;gap:10px}
+.ct .rows a{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:20px;background:var(--surf);transition:background .2s}
+.ct .rows a:hover{background:var(--surf2)}
+.ct .rows .i{width:44px;height:44px;border-radius:14px;background:var(--gold);color:var(--bg);display:grid;place-items:center;flex:none}
+.ct small{display:block;color:var(--mute);font-size:12.5px}
+.ct b{font-weight:600}
+.social{display:flex;gap:10px;margin-top:20px}
+.social a{width:50px;height:50px;border-radius:50%;background:var(--surf);display:grid;place-items:center;transition:background .2s,color .2s}
+.social a:hover{background:var(--gold);color:var(--bg)}
+.mapbox{border-radius:28px;overflow:hidden;background:var(--surf);border:1px solid var(--line);display:flex;flex-direction:column}
+.maptabs{display:flex;gap:6px;padding:8px}
+.maptabs button{flex:1;padding:12px;border-radius:999px;border:0;background:none;font:700 15px var(--disp);color:var(--mute);cursor:pointer}
+.maptabs button.on{background:var(--gold);color:var(--bg)}
+.mapbox iframe{flex:1;min-height:420px;width:100%;border:0;filter:invert(.9) hue-rotate(185deg) saturate(.7) brightness(.95)}
+footer{padding:34px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.gal .rv{opacity:1;transform:none}
+.gal button.rv:nth-child(even){transform:translateY(30px)}
+
+@media(max-width:1100px){
+  .nav ul,.nav .wrap>.btn{display:none}.burger{display:block}
+}
+@media(max-width:900px){
+  .hero .g,.lirmi,.conv,.docs,.ct{grid-template-columns:1fr}
+  .stack{height:440px;max-width:520px;width:100%;margin:10px auto 0}
+  .mv,.sedes{grid-template-columns:1fr}
+  .docs .side{position:static}
+}
+@media(max-width:560px){
+  body{font-size:15.5px}
+  .nav .wrap{height:68px}.brand img{height:40px}.brand b{font-size:18px}
+  .hero{padding-top:30px}
+  .hero h1{font-size:clamp(46px,14vw,64px)}
+  .hero .cta{flex-direction:column}
+  .stack{height:360px}
+  .sticker{width:92px;height:92px}.sticker img{width:44px}
+  .marq div{font-size:22px}
+  .login{padding:16px 18px}.login b{font-size:21px}.login .i{width:48px;height:48px}
+  .sede{min-height:380px}
+  .gal button{width:72vw}
+  .mapbox iframe{min-height:320px}
+  .menu a{font-size:36px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="brand"><img src="img/escudo.png" alt="Escudo Colegio Fénix"><span><b>Colegio Fénix</b><small>San Antonio</small></span></a>
+    <ul>
+      <li><a href="#lirmi">Lirmi</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#sedes">Sedes</a></li>
+      <li><a href="#convivencia">Convivencia</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#documentos">Documentos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#lirmi" class="btn btn-gold">Acceso Lirmi</a>
+    <button class="burger" id="burger" aria-label="Menú"><i></i></button>
+  </div>
+</header>
+<nav class="menu" id="menu">
+  <a href="#lirmi">Acceso a Lirmi</a><a href="#nosotros">Nosotros</a><a href="#sedes">Sedes</a><a href="#convivencia">Convivencia</a><a href="#galeria">Galería</a><a href="#documentos">Documentos</a><a href="#contacto">Contacto</a>
+</nav>
+
+<section class="hero">
+  <div class="wrap g">
+    <div>
+      <span class="tag rv">Colegio Fénix · San Antonio</span>
+      <h1 class="rv">Formamos <span class="hl">líderes</span> para un futuro brillante.</h1>
+      <p class="rv">Valores, excelencia y una educación integral que potencia lo mejor de cada estudiante. Tu educación es nuestra prioridad.</p>
+      <div class="cta rv"><a href="#lirmi" class="btn btn-gold">Acceso a Lirmi →</a><a href="#nosotros" class="btn btn-ghost">Conoce el colegio</a></div>
+      <div class="badges rv"><span>📘 Enseñanza Básica</span><span>🎓 Enseñanza Media</span><span>🏀 Deporte</span></div>
+    </div>
+    <div class="stack rv">
+      <div class="pol p1"><img src="img/basquet-damas.jpg" alt="Selección de básquetbol damas" style="object-position:50% 30%"><span>Básquetbol</span></div>
+      <div class="pol p2"><img src="img/acto-alumnas.jpg" alt="Alumnas en acto oficial" style="object-position:50% 20%"><span>Acto oficial</span></div>
+      <div class="pol p3"><img src="img/teleton-grupo.jpg" alt="Estudiantes en campaña Teletón"><span>Teletón</span></div>
+      <div class="sticker"><img src="img/escudo.png" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<div class="marqwrap" aria-hidden="true"><div class="marq"><div id="mq"></div></div></div>
+
+<section id="lirmi">
+  <div class="wrap lirmi">
+    <div>
+      <span class="tag rv">Plataforma escolar</span>
+      <h2 class="rv">Acceso a Lirmi</h2>
+      <p class="rv">Lirmi es la plataforma de gestión escolar que usa nuestro colegio, uno de los principales software de gestión escolar de Chile. Elige tu perfil para ingresar.</p>
+      <div class="logins">
+        <a class="login rv" href="https://lms.lirmi.com/login" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4z"/><path d="M7 9v5c0 1.7 2.2 3 5 3s5-1.3 5-3V9"/></svg></span><span><b>Ingreso Profesores</b><small>Docentes y equipo</small></span><span class="ar">→</span></a>
+        <a class="login e rv" href="https://login.lirmi.com/login" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span><span><b>Ingreso Estudiantes</b><small>Alumnos y alumnas</small></span><span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="video" data-vid="fz-ZMGBPKak" role="button" tabindex="0" aria-label="Reproducir video ¿Qué es Lirmi?">
+        <img src="https://i.ytimg.com/vi/fz-ZMGBPKak/hqdefault.jpg" alt="Video ¿Qué es Lirmi?" loading="lazy">
+        <span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></span>
+      </div>
+      <div class="vlabel"><span>VIDEO</span>¿Qué es Lirmi?</div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag rv">Nosotros</span>
+      <h2 class="rv">Comprometidos con <span class="hl">tu educación</span></h2>
+      <p class="rv">Integramos lo académico con la cultura, las artes, el deporte y las competencias sociales y humanistas.</p>
+    </div>
+    <div class="mv">
+      <article class="mvc a rv"><span class="n">01</span><h3>Misión</h3><p>Formar personas competentes para insertarse en el mundo y enfrentar los desafíos de hoy, dotadas de los conocimientos, disciplina, valores y habilidades necesarios para su desarrollo integral y el respeto por la legalidad vigente.</p></article>
+      <article class="mvc rv"><span class="n">02</span><h3>Visión</h3><p>Un proyecto educativo centrado en un ser humano integral, que propicia la integración del conocimiento, el trabajo interdisciplinario, la libertad y el desarrollo de la mente y el espíritu en un clima de justo rigor y disciplina.</p></article>
+    </div>
+    <div class="pills rv"><span>📚 Excelencia académica</span><span>🎨 Cultura y artes</span><span>🏀 Deporte</span><span>🤝 Formación ciudadana</span></div>
+  </div>
+</section>
+
+<section id="sedes" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag rv">Nuestras sedes</span>
+      <h2 class="rv">Dos sedes, una <span class="hl">familia</span></h2>
+    </div>
+    <div class="sedes">
+      <article class="sede rv">
+        <img src="img/curso-sala.jpg" alt="Estudiantes de enseñanza básica" loading="lazy">
+        <div class="b">
+          <span class="lvl">Enseñanza Básica</span>
+          <h3>Sede Las Palmeras</h3>
+          <p>Las Palmeras 958, Villa Mirador del Pacífico, San Antonio<br><a href="tel:+56352213026">(35) 2 213026</a> · <a href="tel:+56981893038">+56 9 8189 3038</a></p>
+          <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Las+Palmeras+958,+San+Antonio,+Valpara%C3%ADso">Cómo llegar →</a>
+        </div>
+      </article>
+      <article class="sede rv">
+        <img src="img/basquet-varones.jpg" alt="Estudiantes de enseñanza media" loading="lazy" style="object-position:50% 35%">
+        <div class="b">
+          <span class="lvl">Enseñanza Media</span>
+          <h3>Sede Isla de Pascua</h3>
+          <p>Isla de Pascua 1120, San Antonio<br><a href="tel:+56352219537">(35) 2 219537</a> · <a href="tel:+56981893021">+56 9 8189 3021</a></p>
+          <a class="btn btn-gold" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Isla+de+Pascua+1120,+San+Antonio,+Valpara%C3%ADso">Cómo llegar →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="convivencia" style="padding-top:0">
+  <div class="wrap conv">
+    <div class="video rv" data-vid="Ogil3nK2nrk" role="button" tabindex="0" aria-label="Reproducir video campaña de convivencia">
+      <img src="https://i.ytimg.com/vi/Ogil3nK2nrk/hqdefault.jpg" alt="Video campaña de convivencia escolar" loading="lazy">
+      <span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></span>
+    </div>
+    <div>
+      <span class="tag rv">Campaña de convivencia</span>
+      <h2 class="rv">Aquí todos pueden <span class="hl">florecer</span></h2>
+      <p class="rv">La convivencia escolar es clave para construir una comunidad sana, donde cada estudiante se sienta seguro, valorado y apoyado. Cuidar la salud mental comienza con una palabra amable y un entorno de respeto y empatía.</p>
+      <blockquote class="rv">“Juntos podemos marcar la diferencia en la vida de quienes lo necesitan.”</blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag rv">Vida escolar</span>
+      <h2 class="rv">Momentos que nos <span class="hl">definen</span></h2>
+    </div>
+  </div>
+  <div class="gal" id="gal" data-drag></div>
+  <div class="wrap"><p class="gal-hint">Desliza para ver más →</p></div>
+</section>
+
+<section id="documentos" style="padding-top:0">
+  <div class="wrap docs">
+    <div class="side">
+      <span class="tag rv">Reglamentos y protocolos</span>
+      <h2 class="rv">Documentos oficiales</h2>
+      <p class="rv">Revisa y descarga los documentos que rigen la convivencia y la seguridad en el colegio.</p>
+      <a class="feat rv" href="https://colegiofenix.cl/wp-content/uploads/2024/09/Reglamento-Interno-Agenda-2024.pdf" target="_blank" rel="noopener"><span class="i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></svg></span><span><b>Reglamento interno</b><small>Agenda escolar · PDF</small></span></a>
+    </div>
+    <div class="rv">
+      <label class="search"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Buscar protocolo (ej: accidentes, bullying, sismo)…" aria-label="Buscar protocolo"></label>
+      <ul class="doclist" id="docs"></ul>
+      <div class="empty" id="empty">No encontramos documentos con esa búsqueda.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap ct">
+    <div>
+      <span class="tag rv">Contáctenos</span>
+      <h2 class="rv">Hablemos.</h2>
+      <div class="rows rv">
+        <a href="mailto:colegiofenix@gmail.com"><span class="i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Correo</small><b>colegiofenix@gmail.com</b></span></a>
+        <a href="tel:+56981893038"><span class="i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg></span><span><small>Enseñanza Básica</small><b>+56 9 8189 3038 · (35) 2 213026</b></span></a>
+        <a href="tel:+56981893021"><span class="i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg></span><span><small>Enseñanza Media</small><b>+56 9 8189 3021 · (35) 2 219537</b></span></a>
+      </div>
+      <div class="social rv">
+        <a href="https://www.instagram.com/colegiofenixchile/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://web.facebook.com/colegiofenixoficial" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h-2.5A3.5 3.5 0 009 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 011-1H15z"/></svg></a>
+      </div>
+    </div>
+    <div class="mapbox rv">
+      <div class="maptabs"><button class="on" data-q="Las Palmeras 958, San Antonio, Valparaíso">Enseñanza Básica</button><button data-q="Isla de Pascua 1120, San Antonio, Valparaíso">Enseñanza Media</button></div>
+      <iframe id="map" title="Mapa de la sede" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Las+Palmeras+958,+San+Antonio,+Valpara%C3%ADso&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="brand"><img src="img/escudo.png" alt="" style="height:40px"><span><b>Colegio Fénix</b><small>San Antonio · Valparaíso</small></span></a>
+    <span>© 2026 Colegio Fénix · Diseño web Bakulic Diseño</span>
+  </div>
+</footer>
+
+<script>
+const W = ["Excelencia","Valores","Deporte","Cultura","Comunidad","Liderazgo","Convivencia"];
+document.getElementById("mq").innerHTML = [...W,...W].map(w => `<span>${w}</span>`).join("");
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
